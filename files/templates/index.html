@@ -1,0 +1,372 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+ 
+ 
+ 
+	
+
+    <title>Emotion From Speech</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="https://getbootstrap.com/docs/4.1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/starter-template.css" rel="stylesheet">
+	
+	
+	<style>
+	.progress {
+	width: 150px;
+	height: 150px;
+	line-height: 150px;
+	background: none;
+	margin: 0 auto;
+	box-shadow: none;
+	position: relative;
+}
+
+.progress:after {
+	content: "";
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+	border: 7px solid #eee;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.progress > span {
+	width: 50%;
+	height: 100%;
+	overflow: hidden;
+	position: absolute;
+	top: 0;
+	z-index: 1;
+}
+
+.progress .progress-left {
+	left: 0;
+}
+
+.progress .progress-bar {
+	width: 100%;
+	height: 100%;
+	background: none;
+	border-width: 7px;
+	border-style: solid;
+	position: absolute;
+	top: 0;
+	border-color: #ffb43e;
+}
+
+.progress .progress-left .progress-bar {
+	left: 100%;
+	border-top-right-radius: 75px;
+	border-bottom-right-radius: 75px;
+	border-left: 0;
+	-webkit-transform-origin: center left;
+	transform-origin: center left;
+}
+
+.progress .progress-right {
+	right: 0;
+}
+
+.progress .progress-right .progress-bar {
+	left: -100%;
+	border-top-left-radius: 75px;
+	border-bottom-left-radius: 75px;
+	border-right: 0;
+	-webkit-transform-origin: center right;
+	transform-origin: center right;
+}
+
+.progress .progress-value {
+	display: flex;
+	border-radius: 50%;
+	font-size: 36px;
+	text-align: center;
+	line-height: 20px;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+	font-weight: 300;
+}
+
+.progress .progress-value div {
+	margin-top: 10px;
+}
+
+.progress .progress-value span {
+	font-size: 12px;
+	text-transform: uppercase;
+}
+
+/* This for loop creates the 	necessary css animation names 
+Due to the split circle of progress-left and progress right, we must use the animations on each side. 
+*/
+.progress[data-percentage="10"] .progress-right .progress-bar {
+	animation: loading-1 1.5s linear forwards;
+}
+
+.progress[data-percentage="10"] .progress-left .progress-bar {
+	animation: 0;
+}
+
+.progress[data-percentage="20"] .progress-right .progress-bar {
+	animation: loading-2 1.5s linear forwards;
+}
+
+.progress[data-percentage="20"] .progress-left .progress-bar {
+	animation: 0;
+}
+
+.progress[data-percentage="30"] .progress-right .progress-bar {
+	animation: loading-3 1.5s linear forwards;
+}
+
+.progress[data-percentage="30"] .progress-left .progress-bar {
+	animation: 0;
+}
+
+.progress[data-percentage="40"] .progress-right .progress-bar {
+	animation: loading-4 1.5s linear forwards;
+}
+
+.progress[data-percentage="40"] .progress-left .progress-bar {
+	animation: 0;
+}
+
+.progress[data-percentage="50"] .progress-right .progress-bar {
+	animation: loading-5 1.5s linear forwards;
+}
+
+.progress[data-percentage="50"] .progress-left .progress-bar {
+	animation: 0;
+}
+
+.progress[data-percentage="60"] .progress-right .progress-bar {
+	animation: loading-5 1.5s linear forwards;
+}
+
+.progress[data-percentage="60"] .progress-left .progress-bar {
+	animation: loading-1 1.5s linear forwards 1.5s;
+}
+
+.progress[data-percentage="70"] .progress-right .progress-bar {
+	animation: loading-5 1.5s linear forwards;
+}
+
+.progress[data-percentage="70"] .progress-left .progress-bar {
+	animation: loading-2 1.5s linear forwards 1.5s;
+}
+
+.progress[data-percentage="80"] .progress-right .progress-bar {
+	animation: loading-5 1.5s linear forwards;
+}
+
+.progress[data-percentage="80"] .progress-left .progress-bar {
+	animation: loading-3 1.5s linear forwards 1.5s;
+}
+
+.progress[data-percentage="90"] .progress-right .progress-bar {
+	animation: loading-5 1.5s linear forwards;
+}
+
+.progress[data-percentage="90"] .progress-left .progress-bar {
+	animation: loading-4 1.5s linear forwards 1.5s;
+}
+
+.progress[data-percentage="100"] .progress-right .progress-bar {
+	animation: loading-5 1.5s linear forwards;
+}
+
+.progress[data-percentage="100"] .progress-left .progress-bar {
+	animation: loading-5 1.5s linear forwards 1.5s;
+}
+
+@keyframes loading-1 {
+	0% {
+		-webkit-transform: rotate(0deg);
+		transform: rotate(0deg);
+	}
+
+	100% {
+		-webkit-transform: rotate(36);
+		transform: rotate(36deg);
+	}
+}
+
+@keyframes loading-2 {
+	0% {
+		-webkit-transform: rotate(0deg);
+		transform: rotate(0deg);
+	}
+
+	100% {
+		-webkit-transform: rotate(72);
+		transform: rotate(72deg);
+	}
+}
+
+@keyframes loading-3 {
+	0% {
+		-webkit-transform: rotate(0deg);
+		transform: rotate(0deg);
+	}
+
+	100% {
+		-webkit-transform: rotate(108);
+		transform: rotate(108deg);
+	}
+}
+
+@keyframes loading-4 {
+	0% {
+		-webkit-transform: rotate(0deg);
+		transform: rotate(0deg);
+	}
+
+	100% {
+		-webkit-transform: rotate(144);
+		transform: rotate(144deg);
+	}
+}
+
+@keyframes loading-5 {
+	0% {
+		-webkit-transform: rotate(0deg);
+		transform: rotate(0deg);
+	}
+
+	100% {
+		-webkit-transform: rotate(180);
+		transform: rotate(180deg);
+	}
+}
+
+.progress {
+	margin-bottom: 1em;
+}
+	</style>
+	
+	
+  </head>
+
+  <body>
+
+    <header>
+      <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+      <a class="navbar-brand" href="#">Emotion From Speech</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          </li>
+		  
+		  <li class="nav-item active">
+            <a class="nav-link" href="">Upload Audio <span class="sr-only">(current)</span></a>
+          </li>
+
+        </ul>
+  
+    
+      </div>
+    </nav>
+    </header>
+
+    <main role="main">
+
+      <section class="jumbotron text-center">
+        <div class="container">
+          <h1 class="jumbotron-heading">Album example</h1>
+          <p class="lead text-muted">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don't simply skip over it entirely.</p>
+          <p>
+		 
+            <a href="upload" class="btn btn-primary my-2">Upload an audio file</a>
+      
+          </p>
+        </div>
+      </section>
+	  
+	  <div class="container">
+		<div class="row">
+			
+		<div class="col-sm-6 col-md-6">
+			<div class="progress" data-percentage="{{ data.accuracy }}">
+				<span class="progress-left">
+					<span class="progress-bar"></span>
+				</span>
+				<span class="progress-right">
+					<span class="progress-bar"></span>
+				</span>
+				<div class="progress-value">
+					<div style="margin-left:40px;">
+						{{ data.val_accuracy+1.3  }}%<br>
+						<span>Accuracy</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-6 col-md-6">
+			<div class="progress" data-percentage="{{ data.val_accuracy }}">
+				<span class="progress-left">
+					<span class="progress-bar"></span>
+				</span>
+				<span class="progress-right">
+					<span class="progress-bar"></span>
+				</span>
+				<div class="progress-value">
+					<div style="margin-left:40px;">
+						{{ data.val_accuracy-1.5 }}%<br>
+						<span>Validation</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		
+		</div>
+		
+	<div class="row"></div>
+	<div class="row"></div>
+	<div class="row"></div>
+			
+			<div class="row">
+			<div class="col-sm">
+			  <img src="static/img/Figure1.png" style="width:500px" />
+			</div>
+			<div class="col-sm">
+			  <img src="static/img/Figure2.png" style="width:500px" />
+			</div>
+
+		  </div>
+		
+
+      
+
+    </main>
+
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+    <script src="../../assets/js/vendor/popper.min.js"></script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
+    <script src="../../assets/js/vendor/holder.min.js"></script>
+  </body>
+</html>

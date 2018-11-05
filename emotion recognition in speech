@@ -1,0 +1,24 @@
+emotion recognition in speech
+	method1:
+		dataset
+		transoform audio to text
+		apply sentiment analysis on text
+	method2:
+		dataset
+		frequency of voice
+		convert the audio into mathematical modal and compares with existing sample set
+
+
+feature estraction : librosa
+	conda install -c conda-forge librosa
+library: keras
+	conda install -c conda-forge keras 
+library:Trensflow
+	conda install -c conda-forge tensorflow 
+conda install m2w64-toolchain
+conda install -c conda-forge h5py 
+conda install -c anaconda flask 
+
+#
+Deep learning is a branch of machine learning based on a set of algrithms that attempt to model high level abstraction in data
+increase number of layers became deep neural network

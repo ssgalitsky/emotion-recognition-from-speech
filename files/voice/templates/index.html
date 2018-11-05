@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>voice</title>
+  <script type="text/javascript" src="/static/js/audiodisplay.js"></script>
+  <script type="text/javascript" src="/static/js/recorder.js"></script>
+  <script type="text/javascript" src="/static/js/main.js"></script>
+  <script type="text/javascript">
+  </script>
+  <link rel="stylesheet" type="text/css" href="/static/css/style.css">
+</head>
+<body>
+  <canvas id="analyser" width="1280", height="720"></canvas>
+  <canvas id="wavedisplay" width="800" height="200"></canvas>
+	<div id="record" onclick="toggleRecording(this);">Start</div>
+  <div id="play" class="small-button" onclick="playAudio(this);"></div>
+  <a href="submit2" onclick="submitAudio(this);"><div id="submit" class="small-button" >✔</div></a>
+  <div id="reset" class="small-button" onclick="resetAudio(this);">✗</div>
+  <textarea id="response" placeholder="Server response will be shown here..." disabled></textarea>
+  <audio id="audio">
+</body>
+</html>

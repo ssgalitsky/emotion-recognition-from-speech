@@ -1,0 +1,220 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+	
+
+	<style>
+	
+	 .bs-example{
+    	margin: 20px;
+    }
+	
+	body {
+  padding-top: 5rem;
+}
+.starter-template {
+  padding: 3rem 1.5rem;
+  text-align: center;
+}
+
+
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css);
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+html, body, * {
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+html, body {
+  height: 100%;
+  text-align: center;
+}
+
+body {
+  padding: 2rem;
+  background: #f8f8f8;
+}
+.emotface {
+	width:220px;
+}
+h2 {
+  font-family: "Roboto", sans-serif;
+  font-size: 26px;
+  line-height: 1;
+  color: #454cad;
+  margin-bottom: 0;
+}
+
+p {
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+  color: #5f6982;
+}
+
+
+
+
+
+</style>
+
+    <title>Starter Template for Bootstrap</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="https://getbootstrap.com/docs/4.1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="static/css/starter-template.css" rel="stylesheet">
+	
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+ 
+  </head>
+
+  <body>
+
+     <header>
+      <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top" style="position:absolute;">
+      <a class="navbar-brand" href="#">Emotion From Speech</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          </li>
+		  
+		  <li class="nav-item active">
+            <a class="nav-link" href="#">Upload Audio <span class="sr-only">(current)</span></a>
+          </li>
+
+        </ul>
+  
+    
+      </div>
+    </nav>
+    </header>
+
+
+    <main role="main" class="container">
+
+      <div class="starter-template">
+   
+
+  <h2>File Summary</h2>
+
+
+<div>
+	<audio
+        id="t-rex-roar"
+        controls
+        src="static/uploads/{{ data.audiofilename }}">
+        Your browser does not support the <code>audio</code> element.
+    </audio>
+</div>
+
+<div>
+	<img class="emotface" src="static/img/waveplot.png" style="width:800px" />
+</div>
+
+<div>
+	<img class="emotface" src="static/img/mfccplot.png" style="width:800px;padding-left: 100px;" />
+</div>
+
+<div class="bs-example">
+  
+	<hr>
+   
+	
+
+<div class="row">
+	<div class="col-4">
+		<img class="emotface" src="static/img/emoj2/{{ data.emotion }}.gif">
+		
+		<h1 style="font-size:59px"> {{ data.emotion }} </h1>
+	</div>
+	<div class="col-8">
+  
+
+		<div class="progress progress-striped" style="height:32px">
+			<div class="progress-bar progress-bar-warning" style="width: {{ data.angry }}%;background-color:#c57a0e">
+				angry: {{ data.angry }}%
+			</div>
+		</div>
+		
+		<div class="progress progress-striped" style="height:32px">
+			<div class="progress-bar progress-bar-danger" style="width: {{ data.disgust }}%">
+				disgust: {{ data.disgust }}%
+			</div>
+		</div>
+		
+		<div class="progress progress-striped" style="height:32px">
+			<div class="progress-bar progress-bar-warning" style="width: {{ data.fear }}%">
+				fear: {{ data.fear }}%
+			</div>
+		</div>
+		
+		
+		<div class="progress progress-striped" style="height:32px">
+			<div class="progress-bar progress-bar-primary" style="width: {{ data.happy }}%">
+				happy: {{ data.happy }}%
+			</div>
+		</div>
+		
+	   <div class="progress progress-striped" style="height:32px">
+			<div class="progress-bar progress-bar-info" style="width: {{ data.neutral }}%">
+				neutral: {{ data.neutral }}%
+			</div>
+		</div>
+		
+		
+		<div class="progress progress-striped" style="height:32px">
+			<div class="progress-bar progress-bar-primary" style="width: {{ data.sad }}%;background-color:#ffc107">
+				sad: {{ data.sad }}%
+			</div>
+		</div>
+		
+		
+		<div class="progress progress-striped" style="height:32px">
+			<div class="progress-bar progress-bar-success" style="width: {{ data.surprised }}%">
+				surprised: {{ data.surprised }}%
+			</div>
+		</div>
+		
+	</div>
+  
+  
+</div>
+  
+  
+</div>
+
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+    <script src="js/index.js"></script>
+
+
+      </div>
+
+    </main><!-- /.container -->
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"><\/script>')</script>
+    <script src="https://getbootstrap.com/docs/4.1/assets/js/vendor/popper.min.js"></script>
+    <script src="https://getbootstrap.com/docs/4.1/dist/js/bootstrap.min.js"></script>
+  </body>
+</html>
