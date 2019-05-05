@@ -22,7 +22,13 @@ to run the Flask application, you need to execute the file server.py located in 
 
 ## Demo
 
+### Accuracy
+![Alt text](imgs/Capture1.PNG?raw=true "Title")
 
+### Chose audio file
+![Alt text](imgs/Capture1.PNG?raw=true "Title")
+
+### Output
 ![Alt text](imgs/Capture1.PNG?raw=true "Title")
 
 ## License
