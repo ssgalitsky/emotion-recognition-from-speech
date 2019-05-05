@@ -23,7 +23,7 @@ to run the Flask application, you need to execute the file server.py located in 
 ## Demo
 
 
-
+![Alt text](imgs/Capture1.PNG?raw=true "Title")
 
 ## License
 
