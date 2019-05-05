@@ -8,24 +8,22 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-before starting, you need to install the required packages
+before starting, you need to install the required packages using pip command
 
 ```
-Give examples
+pip install -r requirements.txt
 ```
 
 
 ## Running the App
 
-to run the Flask application, you need to execute the file runserver.py 
+to run the Flask application, you need to execute the file server.py located in the folders "files" 
+
+
+## Demo
 
 
 
-## Authors
-
-* **Anas BARIK** - *Initial work* - [anasbk](https://github.com/anasbk)
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
 
 ## License
 
